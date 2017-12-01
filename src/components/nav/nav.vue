@@ -1,7 +1,7 @@
 <template>
   <nav>
       <div class="logo">
-          <img src="" alt="logo">
+          <img src="//cdn2.jianshu.io/assets/web/logo-58fd04f6f0de908401aa561cda6a0688.png" alt="logo">
       </div>
       <div class="btn write-btn">写文章</div>
       <div class="user"  v-on:mouseover='test()' v-on:mouseout='test2()'>

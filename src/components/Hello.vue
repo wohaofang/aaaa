@@ -7,8 +7,9 @@
 
     <router-link to="./Header">go to header</router-link>
     <router-link to="./Footer">go to footer</router-link>
+    <router-link class="color" to="./hooked">go to hooked</router-link>
     <Headers></Headers>
-    <Footers></Footers>
+    <!-- <Footers></Footers> -->
   </div>
 </template>
 
@@ -16,11 +17,13 @@
 import navs from './nav/nav'
 import Headers from './Header'
 import Footers from './Footer'
+import hooked from './hooked'
 export default {
   components: {
     Headers,
     Footers,
-    navs
+    navs,
+    hooked
   },
   name: 'hello',
   data() {
@@ -36,5 +39,8 @@ header{
   height: 200px;
   width: 200px;
   background: #ccc;
+}
+.color{
+  font-size: 20px;
 }
 </style>

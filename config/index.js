@@ -1,5 +1,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
+// var proxy = 'prod'
+// var proxy = 'dev'
 
 module.exports = {
     build: {
@@ -27,7 +29,13 @@ module.exports = {
         autoOpenBrowser: true,
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
-        proxyTable: {},
+        proxyTable: { //配置请求代理
+            '/hook/':{
+                // target: proxy=='prod'?'http://cms.in.xintiaotime.com/':'http://cms.xintiaotime.com/',
+                target: 'http://cms.in.xintiaotime.com/',
+                changeOrigin: true,
+            }
+        },
         // CSS Sourcemaps off by default because relative paths are "buggy"
         // with this option, according to the CSS-Loader README
         // (https://github.com/webpack/css-loader#sourcemaps)
@@ -36,3 +44,4 @@ module.exports = {
         cssSourceMap: false
     }
 }
+// console.log(proxy)
