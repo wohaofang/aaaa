@@ -36,7 +36,7 @@
 <script>
 import {hookTagListApi} from '../api/index'
 import hookContent from './cms-index/content'
-import '../common/login'
+// import '../common/login'
 
 export default {
     name:'hooked',

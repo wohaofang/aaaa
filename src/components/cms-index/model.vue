@@ -69,6 +69,7 @@
 
 <script>
 import axios from 'axios'
+import qs from 'qs'
 import {hookPieceUpdataApi} from '../../api/index'
 export default {
     name: 'model',
@@ -90,20 +91,31 @@ export default {
         confirmRelease(){
             let _this = this 
             let params = {}
+            params.id = _this.pieceObj.id
+            params.desc = _this.pieceObj.desc
             params.tail = _this.pieceObj.tail
             params.name = _this.pieceObj.name
             params.title = _this.pieceObj.title
             params.author = _this.pieceObj.author
             params.image = _this.pieceObj.image
             params.remark = _this.pieceObj.remark
-            console.log(params)
-            // hookPieceUpdataApi.list(params).then((res)=>{
-            //     console.log(res)
-            // })
-            axios.get('/hook/piece/update',params).then((res)=>{
+            hookPieceUpdataApi.list(params).then((res)=>{
                 console.log(res)
+                if(res.result == 0 ){
+                    _this.close()
+                }else{
+                    alert(res.msg)
+                }
             })
         },
+        // axios.post('/hook/piece/update',qs.stringify(params)).then((res)=>{
+        //     console.log(res.data)
+        //     if(res.data.result == 0 ){
+        //         _this.close()
+        //     }else{
+        //         alert(res.data.msg)
+        //     }
+        // })
         aa(){
             axios.get('/hook/piece/list').then((res)=>{
                 console.log(res)
@@ -113,14 +125,6 @@ export default {
     created(){
         this.aa()
     }
-    // watch:{
-    //     pieceObj:{
-    //         handler(newVal){
-    //             console.log(newVal)
-    //         },
-    //         deep:true
-    //     }
-    // }
 }
 </script>
 

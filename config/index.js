@@ -1,7 +1,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
 // var proxy = 'prod'
-// var proxy = 'dev'
+var proxy = 'dev'
 
 module.exports = {
     build: {
@@ -33,6 +33,11 @@ module.exports = {
             '/hook/':{
                 // target: proxy=='prod'?'http://cms.in.xintiaotime.com/':'http://cms.xintiaotime.com/',
                 target: 'http://cms.in.xintiaotime.com/',
+                changeOrigin: true,
+            },
+            '/read/':{
+                // target: proxy=='prod'?'http://cms.in.xintiaotime.com/':'http://cms.xintiaotime.com/',
+                target: 'http://h5.xintiaotime.com/',
                 changeOrigin: true,
             }
         },

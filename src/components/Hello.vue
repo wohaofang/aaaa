@@ -8,6 +8,7 @@
     <router-link to="./Header">go to header</router-link>
     <router-link to="./Footer">go to footer</router-link>
     <router-link class="color" to="./hooked">go to hooked</router-link>
+    <router-link class="color" to="./hookedTopic">go to hookedTopic</router-link>
     <Headers></Headers>
     <!-- <Footers></Footers> -->
   </div>
@@ -18,12 +19,14 @@ import navs from './nav/nav'
 import Headers from './Header'
 import Footers from './Footer'
 import hooked from './hooked'
+import hookedTopic from './hooked-topic'
 export default {
   components: {
     Headers,
     Footers,
     navs,
-    hooked
+    hooked,
+    hookedTopic
   },
   name: 'hello',
   data() {

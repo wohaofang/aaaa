@@ -1,0 +1,19 @@
+@function Rem($now) {
+    @return ($now / 75) + rem;
+  }
+  @mixin middle($w){
+    left:50%;
+    margin-left:Rem(-$w/2);
+  }
+  @mixin verticalMiddle($h){
+    top:50%;
+    margin-top:Rem(-$h/2);
+  }
+  @mixin size($w,$h){
+    width:Rem($w);
+    height:Rem($h);
+  }
+  @mixin pos($left,$top){
+    left:Rem($left);
+    top:Rem($top);
+  }

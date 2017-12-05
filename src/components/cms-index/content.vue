@@ -1,7 +1,9 @@
 <template>
     <div class="content">
+        <happy-scroll>
         <!-- 子组件的方法 -->
         <button @click="chuandi()">111</button>
+        <!-- <iframe src="http://www.baidu.com" width="900px" height="900px" frameborder="1"></iframe> -->
         <table id="tableList" class="table  table-bordered table-hover table-list">
             <tbody>
                 <tr>
@@ -29,8 +31,13 @@
                         <img class="hookedImg" :src="p.image">
                     </th>
                     <th>{{p.author}}</th>
-                    <th>{{p.create_time}}</th>
-                    <th>{{p.update_time}}</th>
+                    <th>
+                        <p>{{aa(p.create_time * 1000)}}</p>
+                    </th>
+                    <th>
+                        <p>{{aa(p.update_time * 1000)}}</p>
+                    </th>
+                    <!-- <th>{{p.update_time}}</th> -->
                     <th>{{p.remark}}</th>
                     <th>{{p.outer_author}}</th>
                     <th>{{p.read_count?p.read_count:0}}</th>
@@ -44,12 +51,16 @@
             </tbody>
         </table>
         <model :pieceObj ="piece"></model>
+        </happy-scroll>
     </div>
 </template>
 
 <script>
 import {hookPieceListApi} from '../../api/index'
 import model from './model'
+ import { HappyScroll } from 'vue-happy-scroll'
+  // 引入css，推荐将css放入main入口中引入一次即可。
+  import 'vue-happy-scroll/docs/happy-scroll.css'
 
 export default {
     name:'content',
@@ -61,7 +72,8 @@ export default {
         }
     },
     components:{
-        model:model
+        model:model,
+        HappyScroll:HappyScroll
     },
     props:{
        myNum: { // 夫级传递的方法
@@ -89,6 +101,9 @@ export default {
                 // console.log(_this.hookList)
             })
             this.$emit('haha','$emit暴露的方法')
+        },
+        aa(a){
+            return (new Date(a)).toLocaleDateString()
         },
         aaa(){
             console.log('很强大,父组件调用子集方法')
@@ -126,6 +141,9 @@ export default {
 </script>
 
 <style>
+.content{
+    height: 500px;
+}
 .hookedImg{
     width: 80px;
 }
