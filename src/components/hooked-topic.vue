@@ -14,7 +14,7 @@
           <div class="participate relative">{{topicList.participate}}人在玩</div>
           <div class="desc relative">{{topicList.desc}}</div>
       </div>
-      <topicContent></topicContent>
+      <topicContent :topicId="topic_id"></topicContent>
   </div>
 </template>
 
@@ -47,7 +47,6 @@ export default {
                 _this.topicList = res.data[0]
                 console.log(_this.topicList)
                 _this.backgroundImage.backgroundImage = `url(${_this.topicList.image})`
-                console.log(_this.backgroundImage)
             })
         }
     },
