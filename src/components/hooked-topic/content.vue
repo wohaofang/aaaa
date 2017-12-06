@@ -20,6 +20,9 @@ export default {
             start : 0,
             hotList: [],
             newList: [],
+            aaaList: [],
+            bbbList: [],
+            cccList: [],
         }
     },
     methods:{
