@@ -1,6 +1,13 @@
 <template>
   <div class="content">
-      <div class="list"></div>
+      <div class="nav">
+          最热 &#8195;&#8195; || &#8195;&#8195; 最新
+      </div>
+      <div class="list" v-for="p in hotList" :key='p.id'>
+          <div class="img">
+              <img :src="p.image">
+          </div>
+      </div>
   </div>
 </template>
 
@@ -52,11 +59,28 @@ export default {
 
 <style lang="scss" scope>
 .content{
+    .nav{
+        width: 100%;
+        height: 60px;
+        background: aqua;
+        font-size: 20px;
+        text-align: center;
+        line-height: 60px;
+    }
     .list{
         background: red;
         float: left;
         width: 175px;
         height: 361px;
+        margin-left: 8px;
+        .img{
+            width: 174px;
+            height: 232px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
 }
 .content::after{
