@@ -19,10 +19,6 @@ export default {
         return{
             start : 0,
             hotList: [],
-            newList: [],
-            aaaList: [],
-            bbbList: [],
-            cccList: [],
         }
     },
     methods:{
@@ -57,7 +53,16 @@ export default {
 <style lang="scss" scope>
 .content{
     .list{
-        width: 
+        background: red;
+        float: left;
+        width: 175px;
+        height: 361px;
     }
+}
+.content::after{
+    content:'';
+    display: table;
+    overflow: hidden;
+    clear: both;
 }
 </style>
