@@ -20,6 +20,10 @@ export default {
         topicId :{
             type : Number,
             default : 0 
+        },
+        hasNext :{
+            type : Boolean,
+            default :true
         }
     },
     data() {
@@ -44,9 +48,15 @@ export default {
                     // console.log(v)
                     _this.hotList.push(v)
                 })
-                console.log(_this.hotList)
+                let length = _this.hotList.length
+                _this.$emit('hotListLength',length)
+
+                if(arr.length%10 != 0){
+                    // _this.$emit('hotListLength',length)
+                }
+                // console.log(_this.hotList)
             })
-        }
+        },
     },
     created(){
         let _this = this

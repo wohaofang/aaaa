@@ -17,7 +17,7 @@
         </div>
         <button style="font-size:20px">{{num}}</button>
         <button @click="num++">++</button>
-        <topicContent :topicId="topic_id"></topicContent>
+        <topicContent :topicId="topic_id" :hasNext='hasNext' ref="content" @hotListLength="cc"></topicContent>
     </vue-super-scroller>
   </div>
 </template>
@@ -43,11 +43,25 @@ export default {
       hasNext: true,
       num: 0,
       scrollTop:0,
+      length:0
     };
   },
   methods: {
+    cc(res){
+      this.length = res
+      // console.log(this.length)
+    },
     loadMore() {
       let _this = this;
+      _this.cc()
+      console.log(_this.length)
+      if(_this.length% 10 !== 0){
+        _this.num++
+        this.$refs.content.getListHot(_this.num)
+        // console.log(_this.hasNext)
+      }else{
+          // _this.hasNext = false;
+      }
     //   if (_this.listHot.length % 10 == 0) {
     //     _this.getListNew(_this.num);
     //     _this.getListHot(_this.num);
@@ -56,9 +70,6 @@ export default {
     //   } else {
     //     _this.hasNext = false;
     //   }
-      setTimeout(function() {
-        _this.hasNext = false;
-      }, 5000);
     },
     getTopic() {
       let _this = this;
@@ -71,6 +82,7 @@ export default {
         _this.topicList = res.data[0];
         console.log(_this.topicList);
         _this.backgroundImage.backgroundImage = `url(${_this.topicList.image})`;
+        document.title = _this.topicList.name
       })
     },
     handleScroll () {
@@ -79,10 +91,10 @@ export default {
     },
   },
   watch: {
-    num(newVal, oldVal) {
-      console.log(newVal);
-      console.log(oldVal);
-    },
+    // num(newVal, oldVal) {
+    //   console.log(newVal);
+    //   console.log(oldVal);
+    // },
     scrollTop(newVal){
         this.handleScroll()
         console.log(newVal)
