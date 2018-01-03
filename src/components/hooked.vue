@@ -11,7 +11,7 @@
         <div class="option">
             <h5>过滤分类列表</h5>
             <select class="form-control" v-model='condition.tagId' v-on:change="selectTagList(condition.tagId)">
-                <option v-for="t in tagList" v-bind:value='t.id'>{{t.name}}</option>
+                <option v-for="t in tagList" v-bind:value='t.id' :key="t.id">{{t.name}}</option>
             </select>
         </div>
 
