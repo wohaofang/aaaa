@@ -6,7 +6,7 @@
       {{now}}
      <slot>安返</slot>
      <p></p> -->
-     <scroller :on-infinite="infinite" ref="myscroller">
+     <scroller :on-refresh="refresh" :on-infinite="infinite" ref="myscroller">
         <div class="shop-box">
             <ul>
                 <li v-for="m in moveList">
