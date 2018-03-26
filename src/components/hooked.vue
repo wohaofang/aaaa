@@ -29,7 +29,7 @@
 
 
 
-        <hookContent @chuandi="jieshou" @haha="xixi" :condition='condition' ref="hookedContent"></hookContent>
+        <hookContent @chuandi="jieshou" @haha="xixi" @acc="bcc" :condition='condition' :callback2='callback2' ref="hookedContent"></hookContent>
     </div>
 </template>
 
@@ -55,13 +55,23 @@ export default {
         hookContent
     },
     methods:{
+
+        bcc(str){
+            console.log(str)
+        },
         selectTagList(id){
             console.log(id)
         },
         jieshou(num){
             // this.num = num
-            // console.log(num)
+            console.log(num)
             console.log('你好，我是丁铭')
+        },
+        callback1(){
+            console.log('高娟')
+        },
+        callback2(){
+            console.log('高娟真好')
         },
         // getHook(){
         //     // var params = new URLSearchParams();

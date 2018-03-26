@@ -3,6 +3,9 @@
         <happy-scroll>
         <!-- 子组件的方法 -->
         <button @click="chuandi()">111</button>
+        <button @click="shishi()">试试</button>
+        <button @click="cccc()">试试</button>
+        <button @click="submit()">callback</button>
         <!-- <iframe src="http://www.baidu.com" width="900px" height="900px" frameborder="1"></iframe> -->
         <table id="tableList" class="table  table-bordered table-hover table-list">
             <tbody>
@@ -22,7 +25,7 @@
                     <th>标签</th>
                     <th>操作</th>
                 </tr>
-                <tr v-for="(p,index) in hookList">
+                <tr v-for="(p,index) in hookList" :key="p.id">
                     <th>{{index+1}}</th>
                     <th>{{p.id}}</th>
                     <th>{{p.name}}</th>
@@ -43,7 +46,7 @@
                     <th>{{p.read_count?p.read_count:0}}</th>
                     <th>{{p.comment_count?p.comment_count:0}}</th>
                     <!-- <th>{{p.tag_names_list}}</th> -->
-                    <th><span class="tags" v-for="t in p.tag_names_list">{{t}}</span></th>
+                    <th><span class="tags" v-for="t in p.tag_names_list" :key="t.id">{{t}}</span></th>
                     <th>
                         <button class="btn btn-info btn-xs" @click="update(p)">配置</button>
                     </th>
@@ -83,9 +86,24 @@ export default {
        condition: {
            type: Object,
            default:{}
+       },
+       callback2:{
+           type:Function,
+           default:null
        }
     },
     methods:{
+        submit(){
+            if(this.callback2){
+                this.callback2()
+            }
+        },
+        cccc(){
+            this.$emit('acc','nice')
+        },
+        shishi(){
+            this.$parent.callback1()
+        },
         getHookList(start,key,tagId){
             // console.log(start)
             let _this = this

@@ -11,7 +11,7 @@
     <router-link class="color" to="./hookedTopic">go to hookedTopic</router-link>
     <router-link class="color" to="./vueAPI/watch">go to vueWatch</router-link>
     <Headers></Headers>
-    <vue-watch></vue-watch>
+    <!-- <vue-watch></vue-watch> -->
     <!-- <Footers></Footers> -->
   </div>
 </template>
