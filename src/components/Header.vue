@@ -1,8 +1,9 @@
 <template>
   <div class="header">
       header
-    <router-link to="./">go to Hello</router-link>
-    <router-link to="./Footer">go to footer</router-link>
+    <router-link to="/Header/haha">haha</router-link>
+    <router-link to="/">go to Hello</router-link>
+    <router-link to="/Footer">go to footer</router-link>
 
     <left :myName="name"></left>
     <my-name name="丁铭" birth-time='1994 - 04 -14'></my-name>
@@ -24,6 +25,8 @@
         <p>asfshfk</p>
         <p>asdfasgdfhsdh</p>
     </son-component>
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
   </div>
 </template>
 
@@ -94,6 +97,9 @@ export default {
         ahah(a){
             this.bb += a
         }
+    },
+    mounted(){
+        // console.log($route)
     }
 }
 </script>

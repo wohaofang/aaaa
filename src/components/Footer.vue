@@ -16,7 +16,8 @@
       <br>
       <span>Checked names: {{ checkedNames }}</span>
     </div>
-
+    <input type="text" ref="input1">
+    <button @click="add">添加</button>
   </div>
 </template>
  
@@ -54,6 +55,12 @@ export default{
       checkedNames: []
     }
   },
+  methods:{
+    add(){
+      console.log(111)
+      this.$refs.input1.value="haha"
+    }
+  }
 
 }
 </script>
