@@ -26,7 +26,10 @@
         <p>asdfasgdfhsdh</p>
     </son-component>
     <!-- 路由匹配到的组件将渲染在这里 -->
-    <router-view></router-view>
+    <!-- <router-view></router-view> -->
+    <transition name="fade">
+        <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -105,5 +108,10 @@ export default {
 </script>
 
 <style>
-
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 </style>

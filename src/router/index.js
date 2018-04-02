@@ -49,7 +49,11 @@ const router = new Router({
       // name: 'vueWatch',
       component: vueWatch
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    // return 期望滚动到哪个的位置
+    // return { x: 0, y: 0 }
+  }
 })
 
 // 全局路由守卫
