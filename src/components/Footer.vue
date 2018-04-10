@@ -1,5 +1,11 @@
 <template>
   <div class="footer">
+    <div>
+      <!-- {{$route.params.username}} -->
+      <p>新闻ID：{{ $route.params.newsId}}</p>
+        <p>新闻标题：{{ $route.params.newsTitle}}</p>
+    </div>       
+
     <router-link to="./">go to hello</router-link>
     <router-link to="./Header">go to Header</router-link>
     <my-component></my-component>
@@ -23,10 +29,11 @@
  
 <script>
 const child = {
-  template:"<p>你好 我是儿子组件</p>"
+  props:['haha'],
+  template:"<p>你好 我是儿子组件{{haha}}</p>"
 }
 const father = {
-  template:'<p>你好，我是父亲组件<my-child></my-child></p>',
+  template:'<p>你好，我是父亲组件<my-child haha="ding"></my-child></p>',
   components:{
     "my-child": child
   }
@@ -52,7 +59,8 @@ export default{
   name:'footer',
   data(){
     return{
-      checkedNames: []
+      checkedNames: [],
+      haha: '我是丁明'
     }
   },
   methods:{
@@ -60,7 +68,9 @@ export default{
       console.log(111)
       this.$refs.input1.value="haha"
     }
-  }
+  },
+
+
 
 }
 </script>

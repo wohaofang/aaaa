@@ -15,12 +15,22 @@ const router = new Router({
   routes: [{
       path: '/',
       name: 'Hello',
+      // redirect:'/footer',//重定向
       component: Hello
     },
     {
       path: '/footer',
       name: 'Footer',
-      component: Footer
+      component: Footer,
+      beforeEnter:(to,from,next)=>{
+        console.log('我进入Footer了')
+        console.log(to);
+        console.log(from);
+        next();//不执行next 不展示页面
+        //to:路由将要跳转的路径信息，信息是包含在对像里边的。
+        //from:路径跳转前的路径信息，也是一个对象的形式。
+        //next:路由的控制参数，常用的有next(true)和next(false)。
+      }
     },
     {
       path: '/header',
@@ -28,10 +38,12 @@ const router = new Router({
       component: Header,
       children: [
         {
-          path: '/header/haha',
-          component:Footer1
+          path: '/header/:newsId/:newsTitle',
+          component:Footer1,
+          name:'haha'
         }
-      ]
+      ],
+      
     },
     {
       path: '/hooked',
