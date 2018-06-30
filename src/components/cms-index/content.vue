@@ -66,7 +66,7 @@ import model from './model'
   import 'vue-happy-scroll/docs/happy-scroll.css'
 
 export default {
-    name:'content',
+    name:'content1',
     data(){
         return{
             hookList:'',
@@ -74,6 +74,7 @@ export default {
             piece:{},
         }
     },
+    inheritAttrs: false,
     components:{
         model:model,
         HappyScroll:HappyScroll

@@ -1,9 +1,9 @@
 <template>
-  <div id="header" class="header">
+  <div  class="header">
       header
       <button @click="goback">后退</button>
     <button @click="goHome">回到首页</button>
-    <router-link :to="{ path: '/header/198/jspang website is very good',params:{username:'jspang'}}">haha</router-link>
+    <router-link :to="{ path: '/header/198/jspang website is very good',params:{username:'jspang'}}">引入 footer</router-link>
     <!-- :to="{ name:'haha'}"可行   :to="{ path: '/header/haha'}" 也行 -->
     <router-link to="/">go to Hello</router-link>
     <router-link to="/Footer">go to footer</router-link>
@@ -12,7 +12,6 @@
     <my-name name="丁铭" birth-time='1994 - 04 -14'></my-name>
     <div>
         <button>{{ totalCounter }}</button>
-        </br>
         <button-counter v-on:increment-event="total_increment"></button-counter>
         <button-counter v-on:increment-event="total_increment"></button-counter>
 
@@ -35,11 +34,37 @@
         </router-view>
     </transition>
     <input v-model.trim="msg">
+
+
+
+       <el-button @click.native="startHacking">Let's do it</el-button>
+    <div class="block">
+    <div class="element-ui">
+        <el-row>
+            <el-col :span="4"><div class="grid-content bg-purple">1</div></el-col>
+            <el-col :span="4"><div class="grid-content bg-purple-light">2</div></el-col>
+            <el-col :span="4"><div class="grid-content bg-purple">3</div></el-col>
+            <el-col :span="4"><div class="grid-content bg-purple-light">4</div></el-col>
+            <el-col :span="4"><div class="grid-content bg-purple">5</div></el-col>
+            <el-col :span="4"><div class="grid-content bg-purple-light">6</div></el-col>
+        </el-row>
+            <span class="demonstration">显示默认颜色</span>
+            <span class="wrapper">
+                <el-button type="success">成功按钮</el-button>
+                <el-button type="warning">警告按钮</el-button>
+                <el-button type="danger">危险按钮</el-button>
+                <el-button type="info">信息按钮</el-button>
+            </span>
+    </div>
+
+    </div>
   </div>
+  
 </template>
 
 <script>
-import Vue from 'vue'
+  import Vue from 'vue';
+
 import left from './Left/left'
 
 Vue.component('my-name',{
@@ -90,7 +115,7 @@ export default {
     components: {
         left
     },
-    name:'header',
+    name:'header1',
     data(){
         return{
             totalCounter : 0,
@@ -136,4 +161,31 @@ export default {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+
+ .el-row {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
+  .bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+  }
+  .row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+  }
 </style>

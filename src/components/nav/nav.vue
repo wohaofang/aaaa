@@ -26,7 +26,7 @@ export default {
     components: {
         containers
     },
-    name:'nav',
+    name:'nav1',
     data(){
       return{
           block: false

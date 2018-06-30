@@ -14,7 +14,7 @@
 <script>
 import {readPieceListnewApi} from '../../api/index'
 export default {
-    name:'content',
+    name:'content2',
     components:{},
     props:{
         topicId :{
