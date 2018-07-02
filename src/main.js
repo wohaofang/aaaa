@@ -5,9 +5,11 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import store from './store/index'
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false
+
 
 // Vue.components('my-all',{
 //   template:'<p>我是全局组件</p>'
@@ -16,6 +18,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,//使用store
   template: '<App/>',
   components: { App }
 })

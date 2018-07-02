@@ -55,6 +55,8 @@
         </table>
         <model :pieceObj ="piece"></model>
         </happy-scroll>
+
+        <div @click="goback">asdfasdfs</div>
     </div>
 </template>
 
@@ -136,7 +138,11 @@ export default {
             $('.model').show()
             this.piece = p
             console.log(this.piece)
-        }
+        },
+         goback(){
+             console.log(this.$router)
+            
+        },
     },
     watch:{
         // myNum:function aaa(val){

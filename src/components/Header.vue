@@ -50,10 +50,10 @@
         </el-row>
             <span class="demonstration">显示默认颜色</span>
             <span class="wrapper">
-                <el-button type="success">成功按钮</el-button>
+                <el-button type="success" @click="dingming">成功按钮</el-button>
                 <el-button type="warning">警告按钮</el-button>
                 <el-button type="danger">危险按钮</el-button>
-                <el-button type="info">信息按钮</el-button>
+                <el-button type="info"><router-link tag="a" :to="{path:'/header'}" target="_blank">hahah</router-link></el-button>
             </span>
     </div>
 
@@ -137,6 +137,18 @@ export default {
         },
         goHome(){
             this.$router.push('/');
+        },
+        dingming(){
+
+            const {href} = this.$router.resolve({
+                name: 'foo',
+                query: {
+
+                }
+            })
+            console.log(href)
+        //     console.log(window.location.origin)
+        //    window.open(window.location.origin+'header','_blank')
         }
     },
     mounted(){

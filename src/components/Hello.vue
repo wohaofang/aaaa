@@ -13,6 +13,15 @@
     <Headers></Headers>
     <!-- <vue-watch></vue-watch> -->
     <!-- <Footers></Footers> -->
+
+    <br/>
+    <a href="javascript:;" @click="$store.commit('switch_dialog')">mutations,使用commit触发</a>
+    <a href="javascript:;" @click="$store.dispatch('switch_dialog')">actions,使用dispatch触发</a>
+    <a href="javascript:;" @click="switch_dialog">通过mapMutations进行触发</a>
+    <a href="javascript:;" @click="switch_dialog">通过mapMutations进行触发</a>
+    <div>{{$store.state.show}}</div>
+    <div>{{$store.getters.not_show}}</div>
+    <div>{{show}}</div>
   </div>
 </template>
 
@@ -23,6 +32,7 @@ import Footers from './Footer'
 import hooked from './hooked'
 import hookedTopic from './hooked-topic'
 import vueWatch from './vueAPI/watch'
+import {mapState, mapActions,mapGetters,mapMutations} from 'vuex'
 export default {
   components: {
     Headers,
@@ -37,6 +47,29 @@ export default {
     return {
 
     }
+  },
+  computed:{
+    // show(){
+    //   return this.$store.state.show
+    // }
+    ...mapState({
+      show: state => state.show
+    }),
+
+    
+  },
+  methods:{
+   ...mapMutations([
+     'switch_dialog'
+   ]),
+    ...mapActions([
+      'switch_dialog'
+    ])
+   
+  },
+  mounted(){
+    // console.log($store.state.show)
+
   }
 }
 </script>
