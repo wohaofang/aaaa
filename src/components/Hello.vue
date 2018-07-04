@@ -55,7 +55,7 @@ export default {
     ...mapState({
       show: state => state.show
     }),
-
+  
     
   },
   methods:{

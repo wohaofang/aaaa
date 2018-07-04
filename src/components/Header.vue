@@ -143,7 +143,7 @@ export default {
             const {href} = this.$router.resolve({
                 name: 'foo',
                 query: {
-
+                    
                 }
             })
             console.log(href)

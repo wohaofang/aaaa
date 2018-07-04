@@ -163,6 +163,12 @@ export default {
     },
     mounted(){},
 }
+
+
+// var promise = $.ajax({
+//     url:'http://cms.in.xintiaotime.com/hook/piece/list'
+// })
+// promise.done(successFunction);
 </script>
 
 <style>

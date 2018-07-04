@@ -2,8 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Footer from '@/components/Footer'
-import Header from '@/components/Header'
-import hooked from '@/components/hooked'
+// import Header from '@/components/Header'
+const Header = () => import(/* webpackChunkName: "group-foo" */"../components/Header.vue"); // 路由懒加载 1
+// import hooked from '@/components/hooked'
+const hooked = r => require.ensure([], () => r(require('../components/hooked.vue')), 'hooked') // 路由懒加载 2
 import hookedTopic from '@/components/hooked-topic'
 import vueWatch from '@/components/vueAPI/watch'
 import Footer1 from '@/components/Footer'
