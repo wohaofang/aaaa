@@ -3,9 +3,9 @@
         <happy-scroll>
         <!-- 子组件的方法 -->
         <button @click="chuandi()">111</button>
-        <button @click="shishi()">试试</button>
+        <button @click="shishi()"> this.$parent.callback1</button>
         <button @click="cccc()">试试</button>
-        <button @click="submit()">callback</button>
+        <button @click="submit()">callback2</button>
         <!-- <iframe src="http://www.baidu.com" width="900px" height="900px" frameborder="1"></iframe> -->
         <table id="tableList" class="table  table-bordered table-hover table-list">
             <tbody>
