@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><title>play</title><script src=https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js></script><script>(function () {
+            var d = window, a = document.documentElement, e;
+            c();
+            a.setAttribute("data-dpr", d.devicePixelRatio);
+            d.addEventListener("resize", b, false);
+            d.addEventListener("pageshow", function (f) {
+                f.persisted && b()
+            }, false);
+            function b() {
+                clearTimeout(e);
+                e = setTimeout(c, 300)
+            }
+            function c() {
+                var f = a.getBoundingClientRect().width;
+                if (f <= 750) {
+                    d.rem = a.getBoundingClientRect().width / 10
+                } else {
+                    d.rem = 75;
+                }
+                a.style.fontSize = d.rem + "px"
+            }
+        })();</script><style>* {
+            margin: 0;
+            padding: 0;
+        }</style><link href=/static/css/app.1559ab0f5cedd8e013b88b9bfbe86c83.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=/static/js/manifest.150f2b9ad86ffa8d4909.js></script><script type=text/javascript src=/static/js/vendor.c0e54a2e0101d9e20ffe.js></script><script type=text/javascript src=/static/js/app.0d131f4fd2cedc19b964.js></script></body></html>
