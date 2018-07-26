@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div>
-      <!-- {{$route.params.username}} -->
+      {{$route.params.username}}
       <p>新闻ID：{{ $route.params.newsId}}</p>
         <p>新闻标题：{{ $route.params.newsTitle}}</p>
     </div>       
@@ -61,6 +61,7 @@ Vue.directive('drag', {
             document.onmousemove=function(e){  
                 el.style.left=e.clientX-l+'px';  
                 el.style.top=e.clientY-t+'px';  
+              console.log(el.style.top)
             };  
             el.onmouseup=function(){  
                 document.onmousemove=null;  
@@ -93,6 +94,9 @@ export default{
       this.$refs.input1.value="haha"
     }
   },
+  mounted(){
+    console.log(this.$route.params)
+  }
 
 
 

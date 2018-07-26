@@ -2,6 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Footer from '@/components/Footer'
+import PlayIndex from '@/components/play/index'
+import PlayTop from '@/components/play/top'
+import PlayBottom from '@/components/play/bottom'
 // import Header from '@/components/Header'
 const Header = () => import(/* webpackChunkName: "group-foo" */"../components/Header.vue"); // 路由懒加载 1
 // import hooked from '@/components/hooked'
@@ -70,6 +73,23 @@ const router = new Router({
       path: '/vueAPI/watch',
       // name: 'vueWatch',
       component: vueWatch
+    },
+    {
+      path:'/playIndex',
+      name:'PlayIndex',
+      component: PlayIndex,
+      children: [
+        {
+          path:'top',
+          name:'PlayTop',
+          component: PlayTop,
+        },
+        {
+          path:'bottom',
+          name:'PlayBottom',
+          component: PlayBottom,
+        },
+      ]
     }
   ],
   scrollBehavior (to, from, savedPosition) {

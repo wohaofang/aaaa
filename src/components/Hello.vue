@@ -10,11 +10,17 @@
     <router-link class="color" to="./hooked">go to hooked</router-link>
     <router-link class="color" to="./hookedTopic">go to hookedTopic</router-link>
     <router-link class="color" to="./vueAPI/watch">go to vueWatch</router-link>
+    <br/>
+    <router-link class="color" to="./playIndex">去play 页面</router-link>
+    <br/>
+    
     <Headers></Headers>
     <!-- <vue-watch></vue-watch> -->
     <!-- <Footers></Footers> -->
 
     <br/>
+  
+
     <a href="javascript:;" @click="$store.commit('switch_dialog')">mutations,使用commit触发</a>
     <a href="javascript:;" @click="$store.dispatch('switch_dialog')">actions,使用dispatch触发</a>
     <a href="javascript:;" @click="switch_dialog">通过mapMutations进行触发</a>

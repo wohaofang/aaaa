@@ -4,13 +4,20 @@ Vue.use(vuex)
 
 export default new vuex.Store({
     state:{
-        show:false
+        show:false,
+        num: 1,
     },
     mutations:{   // 同步操作
         switch_dialog(state){ //这里的state对应着上面的 state
             state.show = state.show?false:true;
             //你可以在这里执行其他操作改变state
             console.log(state.show)
+        },
+        numJia(state){
+            state.num++
+        },
+        numJian(state){
+            state.num--
         }
     },
     actions:{  // 推荐  异步操作放到这里
