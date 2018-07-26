@@ -1,8 +1,16 @@
 <template>
     <div class="bottom">
         bottom : 
-        <button @click="$store.commit('numJia')">加一</button>
-        <button @click="$store.commit('numJian')">减一</button>
+        <button @click="jiajia">加一</button>
+        <button @click="jianjian">减一</button>
+        <br/>
+        <br/>
+        actions :
+        <button @click="$store.dispatch('numJia')">加一</button>
+        <button @click="$store.dispatch('numJian')">减一</button>
+        <button @click="jiajia">加二</button>
+        <div>{{num}}</div>
+        <div>{{doneTodos}}</div>
     </div>
 </template>
 
@@ -17,7 +25,22 @@ export default {
     },
     components:{
     },
-    methods:{},
+    computed:{
+        ...mapState({
+            num:state=>state.num
+        }),
+        doneTodos () {
+            return this.$store.getters.doneTodos
+        }
+    },
+    methods:{
+        jiajia(){
+            this.$store.commit('numJia')
+        },
+        jianjian(){
+            this.$store.commit('numJian')
+        },
+    },
     created(){},
     mounted(){}
 }
