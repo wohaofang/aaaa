@@ -1,5 +1,6 @@
 <template>
     <div class="bottom">
+        <div>{{haha}}</div>
         bottom : 
         <button @click="jiajia">加一</button>
         <button @click="jianjian">减一</button>
@@ -20,7 +21,7 @@ export default {
     name: "bottom",
     data(){
         return{
-
+            haha:'哈哈'
         }
     },
     components:{
