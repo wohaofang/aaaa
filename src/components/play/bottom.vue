@@ -28,11 +28,14 @@ export default {
     },
     computed:{
         ...mapState({
-            num:state=>state.num
+            num:state=>state.num,
         }),
         doneTodos () {
             return this.$store.getters.doneTodos
-        }
+        },
+        // haha () {
+        //     return this.$store.getters.haha
+        // },
     },
     methods:{
         jiajia(){

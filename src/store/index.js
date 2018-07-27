@@ -44,6 +44,6 @@ export default new vuex.Store({
         },
         doneTodos: state => {
             return state.todos.filter(todo => todo.done)
-        }
+        },
     }
 })
