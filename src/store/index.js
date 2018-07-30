@@ -2,6 +2,8 @@ import Vue from 'vue'
 import vuex from 'vuex'
 Vue.use(vuex)
 
+let haha = 222
+
 export default new vuex.Store({
     state:{
         show:false,
@@ -9,7 +11,8 @@ export default new vuex.Store({
         todos: [
             { id: 1, text: '...', done: true },
             { id: 2, text: '...', done: false }
-        ]
+        ],
+        haha
     },
     mutations:{   // 同步操作
         switch_dialog(state){ //这里的state对应着上面的 state
